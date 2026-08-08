@@ -2,6 +2,8 @@ name: DataDash QA
 
 on:
   push:
+    branches:
+      - main
   workflow_dispatch:
 
 jobs:
@@ -10,10 +12,10 @@ jobs:
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '18'
 
@@ -27,8 +29,3 @@ jobs:
 
       - name: Run QA Script 24f2001517@ds.study.iitm.ac.in
         run: node index.js
-
-
-
-
-# trigger fix
